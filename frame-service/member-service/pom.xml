@@ -4,20 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.wbtang</groupId>
-        <artifactId>springcloudframe</artifactId>
+        <artifactId>frame-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>frame-service-api</artifactId>
+    <artifactId>member-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>frame-service-api</name>
+    <name>member-service</name>
     <packaging>jar</packaging>
 
+
     <dependencies>
+        <!--阿里Nacos动态配置中心-->
         <dependency>
-            <groupId>com.wbtang</groupId>
-            <artifactId>frame-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
     </dependencies>
+
 
 </project>

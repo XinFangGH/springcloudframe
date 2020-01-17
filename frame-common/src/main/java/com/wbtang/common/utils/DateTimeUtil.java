@@ -1,4 +1,4 @@
-package com.wbtang.framecommon.utils;
+package com.wbtang.common.utils;
 
 /**
  * 时间工具类
@@ -7,10 +7,6 @@ package com.wbtang.framecommon.utils;
  * @date 2019/12/20
  */
 public class DateTimeUtil {
-
-
-
-
 
 
 }

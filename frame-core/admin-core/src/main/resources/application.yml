@@ -1,0 +1,38 @@
+#\u81EA\u5B9A\u4E49\u516C\u5171\u670D\u52A1\u5668url
+url: 47.104.169.121
+
+server:
+  port: 7001
+
+spring:
+  application:
+    name: admin-core
+
+  cloud:
+    #    nacos\u914D\u7F6E
+    nacos:
+      #      \u670D\u52A1\u4E2D\u5FC3
+      discovery:
+        server-addr: ${url}:8848
+
+# \u5F00\u542F\u7194\u65AD
+feign:
+  hystrix:
+    enabled: true
+
+# feign(ribbon)\u8C03\u7528\u8D85\u65F6\u65F6\u95F4
+ribbon:
+  # \u591A\u957F\u65F6\u95F4\u6CA1\u8FD4\u56DE\u5C31\u91CD\u8BD5
+  ReadTimeout: 5000
+  # \u591A\u957F\u65F6\u95F4\u6CA1\u8BF7\u6C42\u5230\u670D\u52A1\u5C31\u8FD4\u56DE
+  ConnectTimeout: 3000
+
+# \u7194\u65AD\u8D85\u65F6\u65F6\u95F4,\u8981\u5927\u4E8Efeign\u8D85\u65F6\u65F6\u95F4
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+

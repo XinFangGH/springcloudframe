@@ -1,0 +1,18 @@
+#Nacos配置管理相关配置
+
+
+#自定义公共服务器url
+url: 47.104.169.121
+
+spring:
+  application:
+    name: member
+  cloud:
+    nacos:
+      #          配置中心
+      config:
+        server-addr: ${url}:8848
+        file-extension: yaml
+
+  profiles:
+    active: local

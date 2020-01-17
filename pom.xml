@@ -5,15 +5,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
+        <version>2.1.5.RELEASE</version>
     </parent>
     <groupId>com.wbtang</groupId>
     <artifactId>springcloudframe</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>springcloudframe</name>
 
     <modules>
         <module>frame-common</module>
+        <module>frame-gateway</module>
         <module>frame-core</module>
         <module>frame-service</module>
         <module>frame-service-api</module>
@@ -23,6 +25,7 @@
         <java.version>1.8</java.version>
         <!--打包跳过test包-->
         <skipTests>true</skipTests>
+        <cloud.version>2.1.1.RELEASE</cloud.version>
     </properties>
 
     <dependencies>
@@ -37,6 +40,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--feign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${cloud.version}</version>
+        </dependency>
         <!--阿里json工具-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -45,15 +54,8 @@
         </dependency>
         <!--阿里Nacos服务注册中心-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
+            <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>1.1.4</version>
-        </dependency>
-        <!--阿里Nacos动态配置中心-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <version>1.1.4</version>
         </dependency>
         <!--lombok-->
         <dependency>
@@ -63,22 +65,21 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
     <!--cloud版本-->
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.RELEASE</version>
+                <version>Greenwich.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--阿里的cloud组件管理工具-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

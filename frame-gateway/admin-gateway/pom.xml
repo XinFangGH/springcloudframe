@@ -4,20 +4,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.wbtang</groupId>
-        <artifactId>springcloudframe</artifactId>
+        <artifactId>frame-gateway</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>frame-service-api</artifactId>
+    <artifactId>admin-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>frame-service-api</name>
+    <name>admin-gateway</name>
     <packaging>jar</packaging>
 
+
     <dependencies>
-        <dependency>
-            <groupId>com.wbtang</groupId>
-            <artifactId>frame-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 
 </project>
